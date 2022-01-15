@@ -1,0 +1,98 @@
+openapi: 3.0.1
+info:
+  title: gravity-forms-studioband-automations
+  description: An API for StudioBand GravityForm webhooks
+  version: 1.0.0
+tags:
+  - name: Entries
+    description: Entries created by GravityForms
+  - name: Specification
+    description: The swagger API specification
+  - name: System
+    description: Status status
+paths:
+  /api/v1/entry:
+    post:
+      tags:
+        - Entries
+      description: Create an entry submitted from GravityForms
+      security:
+        - ApiKeyAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: "John Smith"
+                business:
+                  type: string
+                  example: "CompanyCo"
+                email:
+                  type: string
+                  example: "john@companyco.com"
+                contactNumber:
+                  type: string
+                  example: "0412 123 456"
+                message:
+                  type: string
+                  example: "Hello there!"
+                newsletter:
+                  type: string
+                  example: "Subscribe to our newsletter"
+
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: ok
+        401:
+          description: Unauthorised
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: unrecognised Authorization token
+  /health:
+    get:
+      tags:
+        - System
+      responses:
+        200:
+          description: Healthy
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: ok
+
+  /api/v1/spec:
+    get:
+      tags:
+        - Specification
+      responses:
+        200:
+          description: Return the API specification
+          content: {}
+
+components:
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-GRAVITY-FORMS-API-KEY
