@@ -1,7 +1,7 @@
 {
-  "name": "gravity-forms-studioband-automations",
+  "name": "studioband-automations",
   "version": "0.1.0",
-  "description": "An API for StudioBand GravityForm webhooks",
+  "description": "API for StudioBand automations submitted by webhooks",
   "main": "dist/index.js",
   "scripts": {
     "start": "nodemon server/index.ts | pino-pretty",
