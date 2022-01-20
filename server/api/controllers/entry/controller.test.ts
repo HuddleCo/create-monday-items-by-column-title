@@ -15,7 +15,10 @@ describe('Entry', () => {
         message: 'Hello there!',
         newsletter: 'Subscribe to our newsletter',
       })
-      .set({ 'X-GRAVITY-FORMS-API-KEY': process.env.GRAVITY_FORMS_API_KEY })
+      .set({
+        'X-STUDIO-BAND-GRAVITY-FORMS-API-KEY':
+          process.env.STUDIO_BAND_GRAVITY_FORMS_API_KEY,
+      })
       .expect(200)
       .expect('Content-Type', /json/)
       .then((r) => {
@@ -29,13 +32,13 @@ describe('Entry', () => {
     request(Server)
       .post('/api/v1/entry')
       .send({})
-      .set({ 'X-GRAVITY-FORMS-API-KEY': 'ABC' })
+      .set({ 'X-STUDIO-BAND-GRAVITY-FORMS-API-KEY': 'ABC' })
       .expect(401)
       .expect('Content-Type', /json/)
       .then((r) => {
         expect(r.body)
           .to.be.an('object')
           .that.has.property('message')
-          .equal('unrecognised X-GRAVITY-FORMS-API-KEY token');
+          .equal('unrecognised X-STUDIO-BAND-GRAVITY-FORMS-API-KEY token');
       }));
 });

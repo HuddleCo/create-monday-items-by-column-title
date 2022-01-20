@@ -95,4 +95,4 @@ components:
     ApiKeyAuth:
       type: apiKey
       in: header
-      name: X-GRAVITY-FORMS-API-KEY
+      name: X-STUDIO-BAND-GRAVITY-FORMS-API-KEY
