@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.4](https://github.com/aussiDavid/studioband-automations/compare/v1.0.3...v1.0.4) (2022-01-21)
+
+
+### Bug Fixes
+
+* move dotenv to a production depenedency ([3e53dba](https://github.com/aussiDavid/studioband-automations/commit/3e53dba2dd6f45e97697e19b0ba66c4535d031b4))
+
 ### [1.0.3](https://github.com/aussiDavid/studioband-automations/compare/v1.0.2...v1.0.3) (2022-01-21)
 
 ### [1.0.2](https://github.com/aussiDavid/studioband-automations/compare/v1.0.1...v1.0.2) (2022-01-21)

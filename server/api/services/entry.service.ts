@@ -1,5 +1,48 @@
 import mondaySdk from 'monday-sdk-js';
 
+const getBoardColumnsQuery = (boardId: string): string =>
+  `
+    query {
+      boards (ids: [${boardId}]) {
+        columns {
+          title
+          id
+        }
+      }
+    }
+  `;
+
+const createItemQuery = (
+  boardId: string,
+  name: string,
+  columnValues: object
+): string =>
+  `
+    mutation {
+      create_item (
+        board_id: ${boardId},
+        item_name: "${name}",
+        column_values: ${JSON.stringify(JSON.stringify(columnValues))}
+      ) {
+        id
+      }
+    }
+  `;
+
+const createUpdateQuery = (itemId: string, message: string): string =>
+  `
+    mutation {
+      create_update (item_id: ${itemId}, body: "${message}") {
+        id
+      }
+    }
+  `;
+
+const squishColumns = (columns: Array<{ title: string; id: string }>) =>
+  columns.reduce(
+    (previous, { title, id }) => Object.assign(previous, { [title]: id }),
+    {}
+  );
 export class EntryService {
   create(
     boardId: string,
@@ -17,60 +60,26 @@ export class EntryService {
     const monday = mondaySdk();
     monday.setToken(mondayDeveloperToken);
     return monday
-      .api(
-        `
-        query {
-          boards(ids: [${boardId}]) {
-            columns {
-              title
-              id
-            }
-          }
-        }
-        `
-      )
-      .then((response) => response.data.boards[0].columns)
-      .then((columns: Array<{ title: string; id: string }>) =>
-        columns.reduce(
-          (previous, { title, id }) => Object.assign(previous, { [title]: id }),
-          {}
+      .api(getBoardColumnsQuery(boardId))
+      .then(({ data }) => data.boards[0].columns)
+      .then((columns) => squishColumns(columns))
+      .then((ids: { [key: string]: string }) =>
+        monday.api(
+          createItemQuery(boardId, name, {
+            [ids[nameColumn]]: name,
+            [ids[businessColumn]]: business,
+            [ids[contactNumberColumn]]: {
+              phone: contactNumber.replace(/\s+/g, ''),
+              countryShortName: 'AU',
+            },
+            [ids[emailColumn]]: { email, text: email },
+          })
         )
       )
-      .then((ids: { [key: string]: string }) => ({
-        [ids[nameColumn]]: name,
-        [ids[businessColumn]]: business,
-        [ids[contactNumberColumn]]: {
-          phone: contactNumber.replace(/\s+/g, ''),
-          countryShortName: 'AU',
-        },
-        [ids[emailColumn]]: { email, text: email },
-      }))
-      .then((columnValues) =>
-        monday
-          .api(
-            `
-            mutation {
-              create_item(
-                board_id: ${boardId},
-                item_name: "${name}",
-                column_values: ${JSON.stringify(JSON.stringify(columnValues))}
-              ) {
-                id
-              }
-            }
-          `
-          )
-          .then((response) =>
-            monday.api(`
-            mutation {
-              create_update (item_id: ${response.data.create_item.id}, body: "${message}") {
-                id
-              }
-            }
-          `)
-          )
-          .then(() => true)
-      );
+      .then(({ data }) =>
+        monday.api(createUpdateQuery(data.create_item.id, message))
+      )
+      .then(() => true);
   }
 }
 
