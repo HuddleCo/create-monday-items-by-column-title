@@ -4,18 +4,27 @@ import request from 'supertest';
 import Server from '../../..';
 
 describe('Entry', () => {
-  it('should create a new entry', () =>
+  xit('should be successful', () =>
     request(Server)
       .post('/api/v1/entry')
       .send({
+        mondayBoardId: 'board_id_1',
+        mondayDeveloperToken: 'TOKEN',
         name: 'John Smith',
+        mondayNameColumn: 'Full Name',
         business: 'CompanyCo',
+        mondayBusinessColumn: 'Company',
         email: 'john@companyco.com',
+        mondayEmailColumn: 'Email',
         contactNumber: '0412 123 456',
+        mondayContactNumberColumn: 'Phone',
         message: 'Hello there!',
-        newsletter: 'Subscribe to our newsletter',
       })
-      .set({ 'X-GRAVITY-FORMS-API-KEY': process.env.GRAVITY_FORMS_API_KEY })
+      .set({
+        'X-STUDIO-BAND-GRAVITY-FORMS-API-KEY': JSON.parse(
+          process.env.STUDIO_BAND_API_KEYS || '[]'
+        )[0],
+      })
       .expect(200)
       .expect('Content-Type', /json/)
       .then((r) => {
@@ -29,13 +38,13 @@ describe('Entry', () => {
     request(Server)
       .post('/api/v1/entry')
       .send({})
-      .set({ 'X-GRAVITY-FORMS-API-KEY': 'ABC' })
+      .set({ 'X-STUDIO-BAND-GRAVITY-FORMS-API-KEY': '["ABC"]' })
       .expect(401)
       .expect('Content-Type', /json/)
       .then((r) => {
         expect(r.body)
           .to.be.an('object')
           .that.has.property('message')
-          .equal('unrecognised X-GRAVITY-FORMS-API-KEY token');
+          .equal('unrecognised X-STUDIO-BAND-GRAVITY-FORMS-API-KEY token');
       }));
 });
