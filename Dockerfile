@@ -16,8 +16,8 @@ WORKDIR /app
 
 COPY package.json package-lock.json ./
 
-RUN npm install pm2 husky -g && \
-  npm ci --production
+RUN npm install pm2 -g && \
+  npm ci --production --ignore-scripts
 
 COPY --from=build /app/dist ./dist
 
