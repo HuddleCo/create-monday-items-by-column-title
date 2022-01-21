@@ -25,24 +25,39 @@ paths:
             schema:
               type: object
               properties:
+                mondayBoardId:
+                  type: string
+                  example: "123456789"
+                mondayDeveloperToken:
+                  type: string
+                  example: "TOKEN"
                 name:
                   type: string
                   example: "John Smith"
+                mondayNameColumn:
+                  type: string
+                  example: "Full Name"
                 business:
                   type: string
                   example: "CompanyCo"
+                mondayBusinessColumn:
+                  type: string
+                  example: "Company"
                 email:
                   type: string
                   example: "john@companyco.com"
+                mondayEmailColumn:
+                  type: string
+                  example: "Email"
                 contactNumber:
                   type: string
                   example: "0412 123 456"
+                mondayContactNumberColumn:
+                  type: string
+                  example: "Phone"
                 message:
                   type: string
                   example: "Hello there!"
-                newsletter:
-                  type: string
-                  example: "Subscribe to our newsletter"
 
       responses:
         200:

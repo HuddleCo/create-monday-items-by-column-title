@@ -4,16 +4,21 @@ import request from 'supertest';
 import Server from '../../..';
 
 describe('Entry', () => {
-  it('should create a new entry', () =>
+  xit('should be successful', () =>
     request(Server)
       .post('/api/v1/entry')
       .send({
+        mondayBoardId: 'board_id_1',
+        mondayDeveloperToken: 'TOKEN',
         name: 'John Smith',
+        mondayNameColumn: 'Full Name',
         business: 'CompanyCo',
+        mondayBusinessColumn: 'Company',
         email: 'john@companyco.com',
+        mondayEmailColumn: 'Email',
         contactNumber: '0412 123 456',
+        mondayContactNumberColumn: 'Phone',
         message: 'Hello there!',
-        newsletter: 'Subscribe to our newsletter',
       })
       .set({
         'X-STUDIO-BAND-GRAVITY-FORMS-API-KEY':
