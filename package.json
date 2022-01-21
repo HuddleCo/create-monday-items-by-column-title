@@ -1,6 +1,6 @@
 {
   "name": "studioband-automations",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "API for StudioBand automations submitted by webhooks",
   "main": "dist/index.js",
   "scripts": {
