@@ -21,8 +21,9 @@ describe('Entry', () => {
         message: 'Hello there!',
       })
       .set({
-        'X-STUDIO-BAND-GRAVITY-FORMS-API-KEY':
-          process.env.STUDIO_BAND_GRAVITY_FORMS_API_KEY,
+        'X-STUDIO-BAND-GRAVITY-FORMS-API-KEY': JSON.parse(
+          process.env.STUDIO_BAND_API_KEYS || '[]'
+        )[0],
       })
       .expect(200)
       .expect('Content-Type', /json/)
@@ -37,7 +38,7 @@ describe('Entry', () => {
     request(Server)
       .post('/api/v1/entry')
       .send({})
-      .set({ 'X-STUDIO-BAND-GRAVITY-FORMS-API-KEY': 'ABC' })
+      .set({ 'X-STUDIO-BAND-GRAVITY-FORMS-API-KEY': '["ABC"]' })
       .expect(401)
       .expect('Content-Type', /json/)
       .then((r) => {
