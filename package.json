@@ -1,7 +1,7 @@
 {
   "name": "studioband-automations",
   "version": "1.0.4",
-  "description": "API for StudioBand automations submitted by webhooks",
+  "description": "API to create items in Monday by the column title",
   "main": "dist/index.js",
   "scripts": {
     "start": "nodemon server/index.ts | pino-pretty",
