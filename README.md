@@ -1,20 +1,27 @@
 # gravity-forms-studioband-automations
 
-An API for StudioBand GravityForm webhooks
+API to create items in Monday by the column title
 
 ## Quick Start
 
 Get started developing...
 
+Install deps
+
 ```shell
-# install deps
-npm install
+$ npm install
+```
 
-# run in development mode
-npm run dev
+run in development mode
 
-# run tests
-npm run test
+```shell
+$ npm start
+```
+
+run tests
+
+```shell
+$ npm test
 ```
 
 ---
@@ -34,7 +41,9 @@ npm install
 ```
 
 ## Run It
+
 #### Run in *development* mode:
+
 Runs the application is development mode. Should not be used in production
 
 ```shell
@@ -71,12 +80,14 @@ npm run test:debug
 ```
 
 ## Try It
+
 * Open your browser to [http://localhost:3000](http://localhost:3000)
 * Invoke the `/examples` endpoint 
-  ```shell
+  
+
+```shell
   curl http://localhost:3000/api/v1/examples
   ```
-
 
 ## Debug It
 

@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.7](https://github.com/aussiDavid/studioband-automations/compare/v1.0.4...v1.0.7) (2022-01-22)
+
+
+### Bug Fixes
+
+* catch errors in the controller ([5c49f45](https://github.com/aussiDavid/studioband-automations/commit/5c49f4536300528df8a981c1541400ebe12a9699))
+
 ### [1.0.4](https://github.com/aussiDavid/studioband-automations/compare/v1.0.3...v1.0.4) (2022-01-21)
 
 
