@@ -1,6 +1,6 @@
 {
   "name": "studioband-automations",
-  "version": "1.0.7",
+  "version": "1.0.9",
   "description": "API to create items in Monday by the column title",
   "main": "dist/index.js",
   "scripts": {
@@ -19,6 +19,11 @@
     "release:minor": "standard-version --release-as minor",
     "release:patch": "standard-version --release-as patch",
     "release:major": "standard-version --release-as major"
+  },
+  "standard-version": {
+    "skip": {
+      "tag": true
+    }
   },
   "dependencies": {
     "body-parser": "^1.19.0",
