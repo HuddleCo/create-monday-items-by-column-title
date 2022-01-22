@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.10](https://github.com/aussiDavid/studioband-automations/compare/v1.0.8...v1.0.10) (2022-01-22)
+
+
+### Features
+
+* default to port 80 ([053846f](https://github.com/aussiDavid/studioband-automations/commit/053846f75491e53bd0dfc0d71e99dab2a3509dd0))
+
+
+### Bug Fixes
+
+* update STUDIO_BAND_API_KEYS example environment variable ([4aa538e](https://github.com/aussiDavid/studioband-automations/commit/4aa538ec432e2e381b54de9c9b0ddc7bda6c6363))
+
 ### [1.0.9](https://github.com/aussiDavid/studioband-automations/compare/v1.0.7...v1.0.9) (2022-01-22)
 
 ### Features
