@@ -15,7 +15,9 @@ export class Controller {
       req.body.email,
       req.body.mondayEmailColumn,
       req.body.message
-    ).then(() => res.status(200).json({ message: 'ok' }));
+    )
+      .then(() => res.status(200).json({ message: 'ok' }))
+      .catch(({ message }) => res.status(500).json({ message }));
   }
 }
 export default new Controller();
