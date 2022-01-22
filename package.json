@@ -1,6 +1,6 @@
 {
   "name": "studioband-automations",
-  "version": "1.0.4",
+  "version": "1.0.7",
   "description": "API to create items in Monday by the column title",
   "main": "dist/index.js",
   "scripts": {
