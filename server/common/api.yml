@@ -1,6 +1,6 @@
 openapi: 3.0.1
 info:
-  title: gravity-forms-studioband-automations
+  title: create-monday-items-by-column-title
   description: An API for StudioBand GravityForm webhooks
   version: 1.0.0
 tags:
