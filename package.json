@@ -1,6 +1,6 @@
 {
-  "name": "studioband-automations",
-  "version": "1.0.11",
+  "name": "create-monday-items-by-column-title",
+  "version": "2.0.0",
   "description": "API to create items in Monday by the column title",
   "main": "dist/index.js",
   "scripts": {

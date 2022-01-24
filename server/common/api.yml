@@ -11,7 +11,7 @@ tags:
   - name: System
     description: Status status
 paths:
-  /api/v1/entry:
+  /api/entry:
     post:
       tags:
         - Entries
@@ -96,7 +96,7 @@ paths:
                     type: string
                     example: ok
 
-  /api/v1/spec:
+  /api/spec:
     get:
       tags:
         - Specification
@@ -110,4 +110,4 @@ components:
     ApiKeyAuth:
       type: apiKey
       in: header
-      name: X-STUDIO-BAND-GRAVITY-FORMS-API-KEY
+      name: X-CREATE-MONDAY-ITEMS-API-KEY

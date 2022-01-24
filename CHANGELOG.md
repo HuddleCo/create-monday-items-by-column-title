@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.0.0](https://github.com/aussiDavid/studioband-automations/compare/v1.0.8...v2.0.0) (2022-01-24)
+
+### Breaking Changes
+
+* Remove version (v1) in all requests ([114c798](https://github.com/aussiDavid/studioband-automations/commit/114c7987fe46d35b7fc320f15508d4f03eb3cb71))
+* Change `X-STUDIO-BAND-GRAVITY-FORMS-API-KEY` header to `X-CREATE-MONDAY-ITEMS-API-KEY` ([4197327](https://github.com/aussiDavid/studioband-automations/commit/4197327e7144521410733329439063bd433e2b44))
+
 ### [1.0.10](https://github.com/aussiDavid/studioband-automations/compare/v1.0.8...v1.0.10) (2022-01-22)
 
 ### Bug Fixes

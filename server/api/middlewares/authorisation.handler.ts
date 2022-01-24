@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
 
-const HEADER = 'X-STUDIO-BAND-GRAVITY-FORMS-API-KEY';
+const HEADER = 'X-CREATE-MONDAY-ITEMS-API-KEY';
 
 const invalidJSON = (str = ''): boolean => {
   str = str.replace(/\\(?:["\\\/bfnrt]|u[0-9a-fA-F]{4})/g, '@');
@@ -17,7 +17,7 @@ export default function authorisationHandler(
   res: Response,
   next: NextFunction
 ): void {
-  const keys: string = process.env.STUDIO_BAND_API_KEYS || '[]';
+  const keys: string = process.env.CREATE_MONDAY_ITEMS_API_KEYS || '[]';
   if (invalidJSON(keys)) {
     res
       .status(401)

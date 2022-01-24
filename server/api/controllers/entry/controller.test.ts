@@ -6,7 +6,7 @@ import Server from '../../..';
 describe('Entry', () => {
   xit('should be successful', () =>
     request(Server)
-      .post('/api/v1/entry')
+      .post('/api/entry')
       .send({
         mondayBoardId: 'board_id_1',
         mondayDeveloperToken: 'TOKEN',
@@ -21,8 +21,8 @@ describe('Entry', () => {
         message: 'Hello there!',
       })
       .set({
-        'X-STUDIO-BAND-GRAVITY-FORMS-API-KEY': JSON.parse(
-          process.env.STUDIO_BAND_API_KEYS || '[]'
+        'X-CREATE-MONDAY-ITEMS-API-KEY': JSON.parse(
+          process.env.CREATE_MONDAY_ITEMS_API_KEYS || '[]'
         )[0],
       })
       .expect(200)
@@ -36,15 +36,15 @@ describe('Entry', () => {
 
   it('should reject unauthorised request', () =>
     request(Server)
-      .post('/api/v1/entry')
+      .post('/api/entry')
       .send({})
-      .set({ 'X-STUDIO-BAND-GRAVITY-FORMS-API-KEY': '["ABC"]' })
+      .set({ 'X-CREATE-MONDAY-ITEMS-API-KEY': '["ABC"]' })
       .expect(401)
       .expect('Content-Type', /json/)
       .then((r) => {
         expect(r.body)
           .to.be.an('object')
           .that.has.property('message')
-          .equal('unrecognised X-STUDIO-BAND-GRAVITY-FORMS-API-KEY token');
+          .equal('unrecognised X-CREATE-MONDAY-ITEMS-API-KEY token');
       }));
 });

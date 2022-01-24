@@ -86,7 +86,7 @@ npm run test:debug
   
 
 ```shell
-  curl http://localhost:3000/api/v1/examples
+  curl http://localhost:3000/api/examples
   ```
 
 ## Debug It
