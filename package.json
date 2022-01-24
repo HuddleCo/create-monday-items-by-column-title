@@ -20,6 +20,9 @@
     "release:patch": "standard-version --release-as patch",
     "release:major": "standard-version --release-as major"
   },
+  "engines": {
+    "node": ">=16"
+  },
   "standard-version": {
     "skip": {
       "tag": true
