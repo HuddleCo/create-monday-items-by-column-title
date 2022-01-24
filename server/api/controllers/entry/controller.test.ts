@@ -6,7 +6,7 @@ import Server from '../../..';
 describe('Entry', () => {
   xit('should be successful', () =>
     request(Server)
-      .post('/api/v1/entry')
+      .post('/api/entry')
       .send({
         mondayBoardId: 'board_id_1',
         mondayDeveloperToken: 'TOKEN',
@@ -36,7 +36,7 @@ describe('Entry', () => {
 
   it('should reject unauthorised request', () =>
     request(Server)
-      .post('/api/v1/entry')
+      .post('/api/entry')
       .send({})
       .set({ 'X-CREATE-MONDAY-ITEMS-API-KEY': '["ABC"]' })
       .expect(401)
