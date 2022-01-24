@@ -4,17 +4,10 @@ All notable changes to this project will be documented in this file. See [standa
 
 ## [2.0.0](https://github.com/aussiDavid/studioband-automations/compare/v1.0.8...v2.0.0) (2022-01-24)
 
+### Breaking Changes
 
-### Features
-
-* change `X-STUDIO-BAND-GRAVITY-FORMS-API-KEY` header to `X-CREATE-MONDAY-ITEMS-API-KEY` ([4197327](https://github.com/aussiDavid/studioband-automations/commit/4197327e7144521410733329439063bd433e2b44))
-* default to port 80 ([053846f](https://github.com/aussiDavid/studioband-automations/commit/053846f75491e53bd0dfc0d71e99dab2a3509dd0))
-* remove version (v1) in all requests ([114c798](https://github.com/aussiDavid/studioband-automations/commit/114c7987fe46d35b7fc320f15508d4f03eb3cb71))
-
-
-### Bug Fixes
-
-* update STUDIO_BAND_API_KEYS example environment variable ([4aa538e](https://github.com/aussiDavid/studioband-automations/commit/4aa538ec432e2e381b54de9c9b0ddc7bda6c6363))
+* Remove version (v1) in all requests ([114c798](https://github.com/aussiDavid/studioband-automations/commit/114c7987fe46d35b7fc320f15508d4f03eb3cb71))
+* Change `X-STUDIO-BAND-GRAVITY-FORMS-API-KEY` header to `X-CREATE-MONDAY-ITEMS-API-KEY` ([4197327](https://github.com/aussiDavid/studioband-automations/commit/4197327e7144521410733329439063bd433e2b44))
 
 ### [1.0.10](https://github.com/aussiDavid/studioband-automations/compare/v1.0.8...v1.0.10) (2022-01-22)
 
