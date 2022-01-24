@@ -22,7 +22,7 @@ describe('Entry', () => {
       })
       .set({
         'X-STUDIO-BAND-GRAVITY-FORMS-API-KEY': JSON.parse(
-          process.env.STUDIO_BAND_API_KEYS || '[]'
+          process.env.CREATE_MONDAY_ITEMS_API_KEYS || '[]'
         )[0],
       })
       .expect(200)
