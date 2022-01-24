@@ -1,4 +1,4 @@
-# gravity-forms-studioband-automations
+# create-monday-items-by-column-title
 
 API to create items in Monday by the column title
 
