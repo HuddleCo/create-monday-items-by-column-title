@@ -110,4 +110,4 @@ components:
     ApiKeyAuth:
       type: apiKey
       in: header
-      name: X-STUDIO-BAND-GRAVITY-FORMS-API-KEY
+      name: X-CREATE-MONDAY-ITEMS-API-KEY

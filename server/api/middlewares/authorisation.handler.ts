@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
 
-const HEADER = 'X-STUDIO-BAND-GRAVITY-FORMS-API-KEY';
+const HEADER = 'X-CREATE-MONDAY-ITEMS-API-KEY';
 
 const invalidJSON = (str = ''): boolean => {
   str = str.replace(/\\(?:["\\\/bfnrt]|u[0-9a-fA-F]{4})/g, '@');

@@ -21,7 +21,7 @@ describe('Entry', () => {
         message: 'Hello there!',
       })
       .set({
-        'X-STUDIO-BAND-GRAVITY-FORMS-API-KEY': JSON.parse(
+        'X-CREATE-MONDAY-ITEMS-API-KEY': JSON.parse(
           process.env.CREATE_MONDAY_ITEMS_API_KEYS || '[]'
         )[0],
       })
@@ -38,13 +38,13 @@ describe('Entry', () => {
     request(Server)
       .post('/api/v1/entry')
       .send({})
-      .set({ 'X-STUDIO-BAND-GRAVITY-FORMS-API-KEY': '["ABC"]' })
+      .set({ 'X-CREATE-MONDAY-ITEMS-API-KEY': '["ABC"]' })
       .expect(401)
       .expect('Content-Type', /json/)
       .then((r) => {
         expect(r.body)
           .to.be.an('object')
           .that.has.property('message')
-          .equal('unrecognised X-STUDIO-BAND-GRAVITY-FORMS-API-KEY token');
+          .equal('unrecognised X-CREATE-MONDAY-ITEMS-API-KEY token');
       }));
 });
