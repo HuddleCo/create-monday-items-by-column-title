@@ -1,0 +1,20 @@
+version: "3.9"
+services:
+  app:
+    image: aussidavid/monday.com-item-api
+    networks:
+      - proxy
+    deploy:
+      replicas: 2
+      update_config:
+          parallelism: 1
+          delay: 10s
+          order: start-first
+      resources:
+        limits:
+          memory: 128M
+
+networks:
+  proxy:
+    external: true
+    name: NPM_default
