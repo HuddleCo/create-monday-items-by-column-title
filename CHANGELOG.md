@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.2.0](https://github.com/aussiDavid/studioband-automations/compare/v1.0.8...v2.2.0) (2022-04-10)
+
 ### [2.1.1](https://github.com/aussiDavid/create-monday-items-by-column-title/compare/v1.0.8...v2.1.1) (2022-01-24)
 
 ### Features
